@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-const BookingForm = () => {
+const BookingForm = (props) => {
     const [date, setDate] = useState("");
     const [times, setTimes] = useState("");
     const [guests, setGuest] = useState("");
-    const [occcasion, setOccasion] = useState("");
+    const [occasion, setOccasion] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.SubmitForm(e);
+        // props.SubmitForm(e);
     }
 
     const handleChange = (e) => {
@@ -29,10 +29,10 @@ const BookingForm = () => {
 
                             <div>
                                 <label htmlFor="book-time">Choose Time:</label>
-                                <select id="select-time" value={times} onChange={(e) => setTimes (e.target.value)}>
+                                <select id="book-time" value={times} onChange={(e) => setTimes (e.target.value)}>
                                     <option value="">Select a Time</option>
                                     {
-                                        props.avalableTimes.availableTimes.map(availableTimes => {return <option key=
+                                        props.availableTimes.availableTimes.map(availableTimes => {return <option key=
                                             {availableTimes}>{availableTimes}</option>})
                                     }
                                 </select>
@@ -54,7 +54,7 @@ const BookingForm = () => {
                             </div>
 
                             <div classname="btnReceive">
-                                <input aria-Label="On Click" type="submit" value={"Make Your Reservation"} />
+                                <input aria-label="On Click" type="submit" value={"Make Your Reservation"} />
                             </div>
 
                         </fieldset>
