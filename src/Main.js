@@ -12,7 +12,6 @@ const Main = () => {
         return function(){
             return (s = s * a % m) /m;
         }
-
     }
 
 
@@ -42,9 +41,9 @@ const Main = () => {
     }
 
     const navigate = useNavigate();
-    function submitForm (formData){
+    function SubmitForm (formData){
         if(submitAPI(formData)){
-            navigate("/ConfirmedBooking");
+            navigate("/confirmed");
         }
     }
 
@@ -53,7 +52,7 @@ const Main = () => {
             <Routes>
                 <Route path="/" element={<Header/>}/>
                 <Route path="/Booking" element={<Booking availableTimes={state} dispatch={dispatch}
-                submitForm={submitForm}/>}/>
+                SubmitForm={SubmitForm}/>}/>
                 <Route path="/" element={<Header/>}/>
 
             </Routes>

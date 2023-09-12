@@ -8,7 +8,7 @@ const BookingForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // props.SubmitForm(e);
+        props.SubmitForm(e);
     }
 
     const handleChange = (e) => {
@@ -30,7 +30,7 @@ const BookingForm = (props) => {
                             <div>
                                 <label htmlFor="book-time">Choose Time:</label>
                                 <select id="book-time" value={times} onChange={(e) => setTimes (e.target.value)}>
-                                    <option value="">Select a Time</option>
+                                    <option value="" required>Select a Time</option>
                                     {
                                         props.availableTimes.availableTimes.map(availableTimes => {return <option key=
                                             {availableTimes}>{availableTimes}</option>})
@@ -40,7 +40,7 @@ const BookingForm = (props) => {
 
                             <div>
                                 <label htmlFor="book-guests">Number of Guests</label>
-                                <input id="book-guests" min='1' value={guests} onChange={(e) => setGuest
+                                <input id="book-guests" min='1' required value={guests} onChange={(e) => setGuest
                                 (e.target.value)}/>
                             </div>
 
