@@ -2,11 +2,12 @@ import React from "react";
 
 const ConfirmedBooking = () => {
     return (
-        <div className="confirm">
+        <section className="confirm">
             <div>
-                <h1>Booking has been <span>confirmed!</span></h1>
+                <h2>Booking has been <span>confirmed!</span></h2>
+                <h3>We look forward to serving you.</h3>
             </div>
-        </div>
+        </section>
     );
 };
 
